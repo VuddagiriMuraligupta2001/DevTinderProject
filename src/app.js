@@ -2,20 +2,16 @@ const express = require("express");
 
 const app = express();
 
-app.use("/test", (req, res) => {
-  res.send("Hello use test");
-});
-
-app.get("/test", (req, res) => {
-  res.send("Hello get test");
-});
-
-app.post("/test", (req, res) => {
+//params
+app.get("/test/:userid", (req, res) => {
+  console.log(req.params.userid);
   res.send("Hello post test");
 });
 
-app.use("/test", (req, res) => {
-  res.send("Hello use test");
+//query params
+app.post("/test", (req, res) => {
+  console.log(req.query);
+  res.send("Hello post test");
 });
 
 app.listen(3000, () => {
