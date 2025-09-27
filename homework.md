@@ -25,3 +25,13 @@ Episode5-
 - Write a dummy auth middleware for admin
 - Write a dummy auth middleware for all user routes, except /user/login
 - Error handling using app.use("/")
+
+DB, Schema, models-
+
+- Install mongoose library
+- Connect your application to the database / devTinder
+- call connectDB function and connect to the database before starting application on 7777
+- Create a user schema and user model
+- Create signup api to add data to databse
+- Push somedocuments using api calls from postman
+- Error handling using try, catch
