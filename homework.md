@@ -35,3 +35,7 @@ DB, Schema, models-
 - Create signup api to add data to databse
 - Push somedocuments using api calls from postman
 - Error handling using try, catch
+
+- JS object vs JSOn differences
+- Add the express.json middleware to the application
+- Make your signup API dynamic to receive the data from the end user
