@@ -39,3 +39,5 @@ DB, Schema, models-
 - JS object vs JSOn differences
 - Add the express.json middleware to the application
 - Make your signup API dynamic to receive the data from the end user
+- API -get user by email
+- API- Feed API - GET /feed - get all the users from the database
