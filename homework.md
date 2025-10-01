@@ -41,3 +41,10 @@ DB, Schema, models-
 - Make your signup API dynamic to receive the data from the end user
 - API -get user by email
 - API- Feed API - GET /feed - get all the users from the database
+- API - get user by Id
+- Create a delete user API
+- Difference between PATCH and PUT
+- API - update a user
+- Explore the Mongoose Documentation for Model methods
+- What are options in a Model.findOneAndUpdate method, explore more about it.
+- API - update the user with emailId
