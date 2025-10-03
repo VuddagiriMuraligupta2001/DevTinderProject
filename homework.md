@@ -60,3 +60,10 @@ DB, Schema, models-
 - DATA sanitizating - Add api validation for each field
 - Install validator
 - Explore validator library functions and use validator functions for passwords, email, photourl.
+
+- Validate data in signup api
+- Install bcrypt package
+- Create a password hash using bcrypt.hash and save the user with encrypted password
+-
+-
+-
