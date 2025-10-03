@@ -64,6 +64,6 @@ DB, Schema, models-
 - Validate data in signup api
 - Install bcrypt package
 - Create a password hash using bcrypt.hash and save the user with encrypted password
--
--
+- Create login API
+- Compare passwords and throw erros if email or password is invalid
 -
