@@ -8,6 +8,12 @@ const bcrypt = require("bcrypt");
 const { validateSignUpData } = require("./utils/validations");
 const { default: mongoose } = require("mongoose");
 app.use(express.json());
+const cookieParser = require("cookie-parser");
+
+const jwt = require("jsonwebtoken");
+app.use(cookieParser());
+
+const { userAuth } = require("./middlewares/auth");
 
 app.post("/signUp", async (req, res) => {
   try {
@@ -37,12 +43,30 @@ app.post("/login", async (req, res) => {
     }
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (isPasswordValid) {
+      const token = await jwt.sign({ _id: user._id }, "DEVTinder@123", {
+        expiresIn: "7d",
+      });
+      res.cookie("token", token, {
+        expires: new Date(Date.now() + 8 * 3600000),
+      });
       res.send("Login successful!!!");
     } else {
       throw new Error("Password is incorrect");
     }
   } catch (err) {
-    res.status(400).send("Error saving the user: " + err.message);
+    res.status(400).send("Error: " + err.message);
+  }
+});
+
+app.get("/profile", userAuth, async (req, res) => {
+  try {
+    const user = req.user;
+    if (!user) {
+      throw new Error("User does not exist");
+    }
+    res.send(user);
+  } catch (err) {
+    res.status(400).send("ERROR: " + err.message);
   }
 });
 
