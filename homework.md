@@ -76,3 +76,5 @@ DB, Schema, models-
 - userAuth middleware
 - Add the userAuth middleware in profile API and a new sendConnectionRequest API
 - Set the expiry of jwt token and cookies to 7 days
+- Create userSchema method to getJWT()
+- Create userSchema method to comparepassword(passwordInputByUser)
